@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="project" class="chap3.Project">
+        <property name="srcdirs">
+            <!-- setSrcdirs(List<String>) 호출 -->
+            <list>
+                <value>src/</value>
+                <value>srcResources/</value>
+            </list>
+        </property>
+        <!-- setBindir(String) 호출 -->
+        <property name="bindir" value="bin" />
+        <!-- setClasspath(String) 호출 -->
+        <property name="classpath" value="src/" />
+        <!-- setBuild(BuildRunner) 호출 -->
+        <property name="build">
+            <ref bean="runner" />
+        </property>
+    </bean>
+
+    <bean id="runner" class="chap3.BuildRunner">
+        <property name="path" value="c:/setup/" />
+    </bean>
+
+    <bean id="write" class="chap3.WriteImpl">
+        <constructor-arg>
+            <ref bean="articleDao" />
+        </constructor-arg>
+    </bean>
+    <bean id="articleDao" class="chap3.MariaDBArticleDao" />
+</beans>
