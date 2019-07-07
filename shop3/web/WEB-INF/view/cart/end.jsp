@@ -61,7 +61,6 @@
     </tr>
     <tr>
         <td colspan="4">
-            <a href="end.shop">주문확정</a>&nbsp;
             <a href="../item/list.shop">상품 목록</a>&nbsp;
         </td>
     </tr>

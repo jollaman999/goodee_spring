@@ -55,7 +55,7 @@
 
     <tr>
         <td colspan="4" align="right">
-            총 구입 금액: <fmt:formatNumber value="${tot}" pattern="###,###" />원
+            총 구입 금액: <fmt:formatNumber value="${sessionScope.CART.total}" pattern="###,###" />원
         </td>
     </tr>
     <tr>
